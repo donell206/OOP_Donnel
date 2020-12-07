@@ -12,7 +12,7 @@ namespace Reizen.Models
         
         private DateTime vertrekDatum;
         private DateTime terugkeerDatum;
-        private int aantalDagen;
+
 
         protected Reis(DateTime vertrekDatum, DateTime terugkeerDatum, int aantalPersonen)
         {
@@ -23,13 +23,7 @@ namespace Reizen.Models
 
         public int AantalDagen
         {
-            get { return this.aantalDagen; }
-            set
-            {
-                int val= Convert.ToInt16(terugkeerDatum - vertrekDatum);
-                this.aantalDagen = val;
-                //else cw please enter
-            }
+            get{ return (int)Math.Round((TerugkeerDatum - VertrekDatum).TotalDays);}
         }
 
 
@@ -42,9 +36,8 @@ namespace Reizen.Models
             get{return this.vertrekDatum; } 
             set
             {
-                    if (this.vertrekDatum < TerugkeerDatum)
+                    if (value> DateTime.Now)
                         this.vertrekDatum = value;
-                    //else cw please enter
                 } 
         }
 
@@ -53,7 +46,7 @@ namespace Reizen.Models
             get{return this.terugkeerDatum; }
             set
             {
-                    if (this.terugkeerDatum > vertrekDatum)
+                    if (value > DateTime.Now && value> vertrekDatum)
                         this.terugkeerDatum = value;
             }
         }

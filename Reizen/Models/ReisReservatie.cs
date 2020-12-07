@@ -13,8 +13,17 @@ namespace Reizen.Models
         public Reis Reis { get; set; }
         public Reisbureau Reisbureau { get; set; }
 
-        public LogMessage LogMessage { get
-            {return new LogMessage($"met :{Persoon}{Reis}{Reisbureau}");}}
+        public LogMessage LogMessage
+        {
+           get
+            {
+                return new LogMessage($"U heeft een vervoerbewijs genomen MET : {Persoon.Naam} via het reisbureau {Reisbureau.Naam}");
+            }
+        }
+
+
+
+
 
         public ReisReservatie(Persoon persoon, Reis reis, Reisbureau reisbureau)
         {
@@ -29,6 +38,8 @@ namespace Reizen.Models
             Reis = reis;
             Reisbureau = reisbureau;
             Persoon = persoon;
+            LoggerService.AddLogMessage(LogMessage);
+
         }
     }
 }

@@ -7,7 +7,7 @@ using Reizen.Models;
 
 namespace Reizen
 {
-
+    
 
     class Program
     {
@@ -26,7 +26,17 @@ namespace Reizen
             InitReisReservatie();
             InitLogs();
 
-            Console.WriteLine("Kostprijs reis :{0:N2} euro", reisreservaties[1].Reis.BerekenPrijs());
+
+            Console.WriteLine("\n\n\t*******************************************************");
+
+            Console.WriteLine("\tDe prijs van het reisticket is :{0:N2} euro", reisreservaties[0].Reis.BerekenPrijs());
+            Console.WriteLine("\n\t-------------------------------------------------------");
+            Console.WriteLine("\tDe prijs van het reisticket is :{0:N2} euro", reisreservaties[1].Reis.BerekenPrijs());
+            Console.WriteLine("\n\t-------------------------------------------------------");
+
+            Console.WriteLine("\tDe prijs van het reisticket is :{0:N2} euro", reisreservaties[2].Reis.BerekenPrijs());
+            Console.WriteLine("\n\t*******************************************************");
+
 
         }
         static void InitReisReservatie()
@@ -97,7 +107,7 @@ namespace Reizen
 
         static void InitLogs()
         {
-            foreach (var message in LoggerService.logs)
+            foreach (var message in LoggerService.Logs)
             {
                 Console.WriteLine("{0}:{1}", message.ID, message.Boodschap);
             }

@@ -11,21 +11,9 @@ namespace Reizen.Models
 
 
         private double vliegtuigTicketPrijs;
-        private const double TICKET = 1800;
+
         public double VliegtuigTicketPrijs
-        {
-            get
-            {
-                return vliegtuigTicketPrijs;
-            }
-            set
-            {
-                if (value < TICKET)
-                    throw new ArgumentException("TICKET < " +
-                    TICKET);
-                vliegtuigTicketPrijs = value;
-            }
-        }
+        {get; private set;}
 
         public VliegtuigVakantie(DateTime vertrekDatum, DateTime terugkeerDatum, int aantalPersonen, double vliegtuigTicketPrijs) : base(vertrekDatum, terugkeerDatum,aantalPersonen)
         {

@@ -7,29 +7,53 @@ using Reizen.Interfaces;
 
 namespace Reizen.Models
 {
+
+    #region faux 
     public class LogMessage
     {
         public static Random rnd = new Random();
-        public int ID { get; private set; }
-        public string Boodschap { get; private set; }
+        
+
+        public int ID { get;  set; }
+        public string Boodschap { get; set; }
 
         public LogMessage(string boodschap)
         {
 
-
-
             ID = GenereerID();
             Boodschap = boodschap;
         }
-        private int GenereerID()
+
+        
+
+        public int GenereerID()
         {
-            return rnd.Next(1, 2000);
+          
+
+            return rnd.Next(1, 20);
         }
 
 
 
     }
-    
 }
+#endregion end faux
 
-   
+
+
+//    public class LogMessage
+//{
+//    
+//    public int ID { get; set; }
+//    public string Boodschap { get; set; }
+//    public LogMessage(string boodschap)
+//    {
+//        Boodschap = boodschap;
+//        ID = GenereerID();
+//    }
+//    public int GenereerID()
+//    {
+//        return LoggerService.Logs.Length;
+//    }
+//  }
+//}
