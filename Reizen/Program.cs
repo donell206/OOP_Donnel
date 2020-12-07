@@ -16,7 +16,7 @@ namespace Reizen
         private static Persoon[] personen = new Persoon[3];
         private static ReisReservatie[] reisreservaties = new ReisReservatie[3];
 
-        private static readonly object vertrekDatum;
+     //   private static readonly object vertrekDatum;
 
         static void Main(string[] args)
         {

@@ -14,8 +14,7 @@ namespace Reizen.Models
         public Reisbureau Reisbureau { get; set; }
 
         public LogMessage LogMessage { get
-            {
-                return new LogMessage($"Added:{Persoon}{Reis}{Reisbureau}");}}
+            {return new LogMessage($"met :{Persoon}{Reis}{Reisbureau}");}}
 
         public ReisReservatie(Persoon persoon, Reis reis, Reisbureau reisbureau)
         {
